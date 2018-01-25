@@ -1,6 +1,7 @@
 package quincy;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class UserController{
 
 	@RequestMapping(value ="index",method = RequestMethod.GET)
-	public String index(User user12,Person person,String keywords){
+	public String index(HttpServletRequest request, HttpServletResponse response, User user12, Person person, String keywords){
 		System.out.println(user12);
 		return "helloword";
 	}
